@@ -1,0 +1,135 @@
+/* Outlines every container for better visibility (REMOVE WHEN DONE)
+* {
+    outline: 1px dotted orange;
+}
+*/
+
+body {
+    display: grid;
+    grid-template-columns: [left-wall-start] auto [center-start] 0% [right-wall-start] auto [right-wall-end];
+    grid-template-rows: [ceiling-start] auto [ceiling-end] 0% [floor-start] auto [floor-end];
+    height:100vh;
+    margin: 0;
+}
+
+/* Ceiling section */
+
+.top {
+    display: inherit;
+    grid-template-columns: [left-wall-start] auto [center-start] 0% [right-wall-start] auto [right-wall-end];
+    grid-template-rows: [row-start] 100% [row-end];
+    grid-column-start: left-wall-start;
+    grid-column-end: right-wall-end;
+    grid-row-start: ceiling-start;
+    grid-row-end: ceiling-end;
+}
+
+#top-left, #top-center, #top-right {
+    background-color:teal;
+}
+
+#wall-top-left, #top-left {
+    grid-column-start: left-wall-start;
+    grid-column-end: center-start;
+    grid-row-start: row-start;
+    grid-row-end: row-end;
+}
+
+#top-left {
+    clip-path: polygon(100% 100%, 0 0, 100% 0);
+}
+
+#wall-top-left {
+    background-color: turquoise;
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+#top-center {
+    grid-column-start: center-start;
+    grid-column-end: right-wall-start;
+    grid-row-start: row-start;
+    grid-row-end: row-end;
+}
+
+#top-right, #wall-top-right {
+    grid-column-start: right-wall-start;
+    grid-column-end: right-wall-end;
+    grid-row-start: row-start;
+    grid-row-end: row-end;
+}
+
+#top-right {
+    clip-path: polygon(100% 0, 0 0, 0 100%);
+}
+#wall-top-right {
+    background-color: turquoise;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* Center-section */
+
+.center {
+    display: inherit;
+    grid-template-columns: [left-wall-start] auto [center-start] 0% [right-wall-start] auto [right-wall-end];
+    grid-template-rows: [row-start] 100% [row-end];
+    grid-column-start: left-wall-start;
+    grid-column-end: right-wall-end;
+    grid-row-start: ceiling-end;
+    grid-row-end: floor-start;
+}
+
+#center-left, #center-right {
+    background-color: turquoise;
+}
+
+#special {
+    background-color: grey;
+}
+
+/* Floor-section */
+
+.bottom {
+    display: inherit;
+    grid-template-columns: [left-wall-start] auto [center-start] 0% [right-wall-start] auto [right-wall-end];
+    grid-template-rows: [row-start] 100% [row-end];
+    grid-column-start: left-wall-start;
+    grid-column-end: right-wall-end;
+    grid-row-start: floor-start;
+    grid-row-end: floor-end;
+}
+
+#floor-left, #floor-center, #floor-right {
+    background-color: teal;
+}
+
+#wall-floor-left, #floor-left {
+    grid-column-start: left-wall-start;
+    grid-column-end: center-start;
+    grid-row-start: row-start;
+    grid-row-end: row-end;
+}
+
+#floor-left {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+#wall-floor-left {
+    background-color: turquoise;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+#wall-floor-right, #floor-right {
+    grid-column-start: right-wall-start;
+    grid-column-end: right-wall-end;
+    grid-row-start: row-start;
+    grid-row-end: row-end;
+}
+
+#floor-right {
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+#wall-floor-right {
+    background-color: turquoise;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
