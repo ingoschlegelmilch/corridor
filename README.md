@@ -12,3 +12,5 @@ In the current version you need to use the mousewheel to scroll either up for mo
 ## Known-issues
 ---
 On certain dimensions of the center container there are white spaces revealing part of the grid layout, not sure how and if this can be resolved as I assume this is due to the constant resizing of the grid dimensions.
+
+Also the eventListener does not seem to work in Firefox, need to investigate :)
